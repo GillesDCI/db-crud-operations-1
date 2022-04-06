@@ -44,14 +44,14 @@ We have to create a new Product Schema with the following fields:
 Example using save
 
  ```javascript
-const tea = new Tea({ name: 'Sencha', type: 'GREENTEA' });
+const tea = new Tea({ name: 'Sencha', price:2.5 });
 await tea.save();
    ```
 
 Example using create
 
  ```javascript
-const tea = await Tea.create({ name: 'Sencha', type: 'GREENTEA' });
+const tea = await Tea.create({ name: 'Sencha', price:5 });
    ```
 
 ## Task 4 - Get list of products  (READ)
@@ -85,7 +85,7 @@ const tea = await Tea.findById(req.param.id);
 Example using findByIdAndUpdate 
 
  ```javascript
-const tea = await Tea.findByIdAndUpdate(req.params.id, { name: 'BLACKTEA', price:5 },{new:true});
+const tea = await Tea.findByIdAndUpdate(req.params.id, { name: 'Sencha Green Tea', price:5 },{new:true});
    ```
 
 ## Task 7 - Delete one product by id  (DELETE)
