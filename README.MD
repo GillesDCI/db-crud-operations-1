@@ -32,7 +32,6 @@ We have to create a new Product Schema with the following fields:
 
 - name - String 
 - price - Number
-- category - String (example "INDOORS", "OUTDOORS")
 - instock - Boolean (true or false)
 
 
@@ -77,62 +76,31 @@ Example using findById
 const tea = await Tea.findById('dsf5464sdsms5d');
    ```
 
-## Task 6 - Get products by category (READ)
-  1. Create a new `get` endpoint `/category/:category` in `productsRoutes`. 
 
-  2. Use the `find` method to return the products with the category specified in the parameters. 
-
-Example using find 
-
- ```javascript
-const teas = await Tea.find({ type: 'GREENTEA' });
-   ```
-
-## Task 7 - Update category of product by id (UPDATE)
-  1. Create a new `put` endpoint `/update/category/:id` in `productsRoutes`. 
+## Task 6 - Update name and price of product by id (UPDATE)
+  1. Create a new `patch` endpoint `/update/:id` in `productsRoutes`. 
 
   2. Use the `findByIdAndUpdate` method to update the product 
 
 Example using findByIdAndUpdate 
 
  ```javascript
-const tea = await Tea.findByIdAndUpdate('dfsdfqsfdsfqsd', { type: 'BLACKTEA' });
+const tea = await Tea.findByIdAndUpdate('dfsdfqsfdsfqsd', { name: 'BLACKTEA', price:5 },{new:true});
    ```
 
-## Task 8 - Delete one product by name  (DELETE)
-  1. Create a new `delete` endpoint `/delete/:name` in `productsRoutes`. 
+## Task 7 - Delete one product by id  (DELETE)
+  1. Create a new `delete` endpoint `/delete/:id` in `productsRoutes`. 
 
-  2. Use the `findOneAndDelete` method to delete the product 
+  2. Use the `findByIdAndDelete` method to delete the product 
 
 Example using findOneAndDelete 
 
  ```javascript
-const teas = await Tea.findOneAndDelete({ name: 'Sencha' });
-   ```
-
-## Task 9 - Delete one product by name  (DELETE)
-  1. Create a new `delete` endpoint `/delete/:name` in `productsRoutes`. 
-
-  2. Use the `findOneAndDelete` method to delete the product 
-
-Example using findOneAndDelete 
-
- ```javascript
-const teas = await Tea.findOneAndDelete({ name: 'Sencha' });
+const teas = await Tea.findbyIdAndDelete(req.params.id);
    ```
 
 
-## Task 10 - Delete all products by category  (DELETE)
-  1. Create a new `delete` endpoint `/delete/category/:category` in `productsRoutes`. 
 
-  2. Use the `deleteMany` method to delete the product 
-
-Example using deleteMany 
-
- ```javascript
-const resultDelete = await Tea.deleteMany({ type: 'GREENTEA' });
-
-   ```
 
 
 
