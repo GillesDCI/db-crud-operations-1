@@ -73,7 +73,7 @@ const teas = await Tea.find(); // all the teas
 Example using findById
 
  ```javascript
-const tea = await Tea.findById('dsf5464sdsms5d');
+const tea = await Tea.findById(req.param.id);
    ```
 
 
@@ -85,7 +85,7 @@ const tea = await Tea.findById('dsf5464sdsms5d');
 Example using findByIdAndUpdate 
 
  ```javascript
-const tea = await Tea.findByIdAndUpdate('dfsdfqsfdsfqsd', { name: 'BLACKTEA', price:5 },{new:true});
+const tea = await Tea.findByIdAndUpdate(req.params.id, { name: 'BLACKTEA', price:5 },{new:true});
    ```
 
 ## Task 7 - Delete one product by id  (DELETE)
